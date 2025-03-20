@@ -24,7 +24,6 @@ api-odontoprev
 
 ### 2. Clonar o Repositório
 sh
- git clone https://github.com/seu-usuario/api-odontoprev.git
  cd api-odontoprev
 
 
