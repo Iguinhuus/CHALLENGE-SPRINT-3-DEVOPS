@@ -1,0 +1,35 @@
+Documento com todas as tabelas do banco para apresentação.
+
+
+
+CREATE TABLE Clientes (
+    id_cliente INT IDENTITY(1,1) PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    telefone VARCHAR(20),
+    data_criacao DATETIME DEFAULT GETDATE()
+);
+
+-- Criar a tabela de Agendamentos
+CREATE TABLE Agendamentos (
+    id_agendamento INT IDENTITY(1,1) PRIMARY KEY,
+    id_cliente INT NOT NULL,
+    data_agendamento DATE NOT NULL,
+    hora_agendamento TIME NOT NULL,
+    status VARCHAR(50) CHECK (status IN ('Agendado', 'Cancelado', 'Concluído')) NOT NULL,
+    CONSTRAINT FK_Agendamentos_Clientes FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente) ON DELETE CASCADE
+);
+
+-- Inserir alguns dados iniciais na tabela Clientes
+INSERT INTO Clientes (nome, email, telefone) VALUES
+('João Silva', 'joao.silva@email.com', '11987654321'),
+('Maria Souza', 'maria.souza@email.com', '11976543210');
+
+-- Inserir alguns dados iniciais na tabela Agendamentos
+INSERT INTO Agendamentos (id_cliente, data_agendamento, hora_agendamento, status) VALUES
+(1, '2025-03-25', '14:00', 'Agendado'),
+(2, '2025-03-26', '10:30', 'Agendado');
+
+-- Consultar dados
+SELECT * FROM Clientes;
+SELECT * FROM Agendamentos;
