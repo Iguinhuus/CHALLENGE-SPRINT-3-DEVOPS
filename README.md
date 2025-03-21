@@ -3,6 +3,12 @@
 ## Sobre o Projeto
 Este projeto tem como objetivo a criação de um sistema para gerenciamento de Clientes e Agendamentos, utilizando Node.js,Azure SQL e API REST.
 
+##Grupo:
+RM 553434 – Igor Oviedo 
+Rm553565 - Thiago Carrillo    
+RM 553093 - Cauã Loureiro   
+
+
 # Tecnologias Utilizadas
 - Back-end: Node.js 
 - Banco de Dados: Azure SQL
